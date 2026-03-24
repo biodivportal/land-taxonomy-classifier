@@ -1,53 +1,65 @@
-﻿CLC Code;German Name;English Translation;Synonyms / Alternative Terms;
-;Summe;Total;;
-;Küstengewässer, Lagunen und in der Gezeitenzone liegende Flächen;Coastal Waters, Lagoons and Intertidal Areas;Coastal wetlands, tidal flats, mudflats, brackish water bodies, littoral zone, nearshore habitats, wadden;
-;Natürliche und naturnahe Offenland-Ökosysteme;Natural and Near-Natural Open Land Ecosystems;Semi-natural open habitats, open land biotopes;
-321;Natürliches Grünland;Natural Grassland;Native grassland, semi-natural grassland, unimproved grassland;
-322;Heide und Moorheiden;Heath and Moorland Heath;Heathland, shrub heath, dwarf shrub heath, upland heath;
-;Hecken, Feldgehölze, Baumreihen sowie HNV Komplexelemente, Ruderal-, Hochgras-, Staudenfluren außerhalb von Siedlungsflächen, Industrieflächen etc. und Wäldern;Hedgerows, Scrub, Tree Rows and HNV Complex Elements, Ruderal and Tall Herb Vegetation;Hedges, field copses, tree lines, high nature value elements, ruderal vegetation, tall grassland;
-411;Sümpfe;Marshes;Swamps, wetlands, fens, waterlogged areas;
-412;Torfmoore;Peat Bogs;Mires, raised bogs, blanket bogs, peatland, sphagnum bogs;
-421;Salzwiesen;Salt Marshes;Saline meadows, coastal marshes, halophytic vegetation, tidal marshes;
-331;Strände, Dünen, Sandflächen;Beaches, Dunes and Sand Plains;Sandy shores, coastal dunes, sand flats, littoral sand;
-332;Felsen ohne Vegetation;Bare Rock;Rock outcrops, unvegetated rock, cliffs, rocky surfaces;
-333;Spärliche Vegetation;Sparsely Vegetated Areas;Sparse vegetation, open ground, pioneer vegetation;
-334;Brandflächen;Burnt Areas;Fire-affected land, post-fire areas, burned ground, pyrogenic areas;
-335;Gletscher/Dauerschneegebiete;Glaciers and Permanent Snow;Ice fields, permanent ice, snowfields, perennial snow cover;
-;Wälder;Forests;Woodland, wooded areas, sylvan land;
-311;Laubwälder;Broadleaved Forest;Deciduous forest, hardwood forest, broadleaf woodland;
-312;Nadelwälder;Coniferous Forest;Softwood forest, evergreen forest, needle-leaf forest, pine/spruce forest;
-313;Mischwälder;Mixed Forest;Mixed woodland, combined broadleaf-conifer forest;
-324;Wald-Strauch-Übergangsstadien;Transitional Woodland Scrub;Forest-shrub transition, woodland regrowth, scrubland, secondary woodland;
-;Landwirtschaft;Agriculture;Farmland, agricultural land, cultivated land;
-211;Nicht bewässertes Ackerland;Non-Irrigated Arable Land;Dryland farming, rain-fed cropland, unirrigated cropland, tillage land;
-221;Weinbauflächen;Vineyards;Viticulture areas, wine-growing land, grape cultivation;
-222;Obst- und Beerenobstbestände;Fruit Trees and Berry Plantations;Orchards, soft fruit cultivation, fruit groves, pomiculture;
-231;Wiesen und Weiden;Pastures and Meadows;Grassland, permanent pasture, grazing land, improved grassland, leys;
-242;Komplexe Parzellenstruktur;Complex Cultivation Patterns;Mixed land use parcels, fragmented agricultural plots, mosaic farmland;
-243;Landwirtschaftlich genutzte Flächen mit natürlicher Bodenbedeckung von signifikanter Größe;Agricultural Land with Significant Natural Vegetation;Agri-natural mosaics, farmland with semi-natural cover, extensively farmed natural areas;
-;Gewässer und Meere;Water Bodies and Seas;Aquatic habitats, water surfaces, hydrological areas;
-511;Gewässerläufe;Water Courses;Rivers, streams, canals, waterways, fluvial channels, running water;
-512;Wasserflächen;Water Bodies;Lakes, ponds, reservoirs, still water, standing water, lentic water;
-521;Lagunen;Coastal Lagoons;Brackish lagoons, coastal lakes, semi-enclosed coastal water;
-522;Mündungsgebiete;Estuaries;River mouths, tidal estuaries, coastal inlets, firth, delta areas;
-523;Meere und Ozeane (Küstengewässer bis 1 nm jenseits der Basislinie, Küstenmeer bis 12 nm und Ausschließliche Wirtschaftszone);Sea and Ocean (Coastal Waters, Territorial Sea and EEZ);Marine waters, offshore areas, exclusive economic zone, littoral zone, open sea;
-423;In der Gezeitenzone liegende Flächen;Intertidal Flats;Mudflats, tidal flats, wadden, foreshore, tidal zone;
-;Siedlung und Verkehr;Settlement and Transport;Urban and transport areas, built-up land, developed land;
-111;Wohngebiete durchgängig städtische Prägung;Continuous Urban Fabric;Dense urban areas, built-up areas, city centres, high-density residential;
-112;Wohngebiete nicht durchgängig städtische Prägung;Discontinuous Urban Fabric;Suburban residential, low-density housing, mixed urban-green areas;
-121;Industrie- und Gewerbefl, öffentliche Einrichtungen;Industrial and Commercial Units;Industrial zones, business parks, commercial land, manufacturing areas;
-122;Straßen, Wege, Eisenbahnnetze und funktionell zugeordnete Flächen (einschließlich aus ATKIS gepufferte Elemente außerhalb von Siedlungs- und Verkehrsflächen);Road and Rail Networks;Transport infrastructure, road corridors, railway land, traffic areas;
-;Flächen gemischter Nutzung;Mixed Use Areas;Multi-use zones, mixed-use land, combined use parcels;
-;Flächen besonderer Prägung einschließlich Plätze;Areas of Special Character incl. Squares;Special purpose land, public squares, civic areas, plazas;
-123;Hafengebiete;Port Areas;Harbours, docks, marine terminals, port infrastructure, quays;
-124;Flughäfen;Airports;Airfields, aerodromes, aviation facilities, air transport infrastructure;
-133;Baustellen;Construction Sites;Building sites, development land, active construction areas;
-131;Abbauflächen;Mineral Extraction Sites;Quarries, open-cast mines, gravel pits, extraction areas, mining land;
-;Bergbaubetriebe;Mining Operations;Underground mining, mineral workings, mine sites, collieries;
-132;Deponien und Abraumhalden;Dump Sites and Spoil Heaps;Landfill, waste disposal sites, slag heaps, tailings, refuse tips;
-;Friedhöfe;Cemeteries;Graveyards, burial grounds, churchyards, memorial parks;
-141;Grünfläche (an StBA-Flächenangabe angepasst weil bei LBM nur innerhalb Siedlung);Green Urban Areas (adj. to StBA);Urban parks, city green space, urban vegetation, recreational greenery;
-142;Sport- und Freizeitanlagen (an StBA-Flächenangabe angepasst);Sport and Leisure Facilities (adj. to StBA);Recreational areas, sports grounds, leisure parks, athletic facilities;
-;FFH-Flächen;FFH Areas (Habitats Directive Sites);Natura 2000 habitats, EU protected habitats, SAC, Special Areas of Conservation;
-;HNV-Flächen (nicht gleichzeitig FFH);HNV Areas (not simultaneously FFH);High Nature Value farmland, biodiversity-rich agricultural land;
-;Landwirtschaft einschließlich alle HNV-Farmland Flächen;Agriculture incl. all HNV Farmland Areas;Total farmland including high nature value, agricultural land with biodiversity;
+CLC Code;Level;Parent Code;German Name;English Name;Synonyms
+1;1;;Bebaute Flächen;Artificial Surfaces;Urban land, built-up areas, developed land, human settlements
+11;2;1;Städtisch geprägte Flächen;Urban Fabric;Residential areas, urban tissue, city fabric, built-up urban zones
+12;2;1;Industrie-, Gewerbe- und Verkehrsflächen;Industrial, Commercial and Transport Units;Industrial zones, commercial areas, transport infrastructure
+13;2;1;Abbauflächen, Deponien und Baustellen;Mine, Dump and Construction Sites;Extraction sites, waste disposal, building sites
+14;2;1;Künstlich angelegte nicht-landwirtschaftliche Grünflächen;Artificial Non-Agricultural Vegetated Areas;Urban green spaces, recreational land, parks, sport facilities
+111;3;11;Wohngebiete durchgängig städtische Prägung;Continuous Urban Fabric;Dense urban areas, built-up areas, city centres, high-density residential
+112;3;11;Wohngebiete nicht durchgängig städtische Prägung;Discontinuous Urban Fabric;Suburban residential, low-density housing, mixed urban-green areas
+121;3;12;Industrie- und Gewerbeflächen öffentliche Einrichtungen;Industrial and Commercial Units;Industrial zones, business parks, commercial land, manufacturing areas
+122;3;12;Straßen Eisenbahnnetze und funktionell zugeordnete Flächen;Road and Rail Networks;Transport infrastructure, road corridors, railway land, traffic areas
+123;3;12;Hafengebiete;Port Areas;Harbours, docks, marine terminals, port infrastructure, quays
+124;3;12;Flughäfen;Airports;Airfields, aerodromes, aviation facilities, air transport infrastructure
+131;3;13;Abbauflächen;Mineral Extraction Sites;Quarries, open-cast mines, gravel pits, extraction areas, mining land
+132;3;13;Deponien und Abraumhalden;Dump Sites and Spoil Heaps;Landfill, waste disposal sites, slag heaps, tailings, refuse tips
+133;3;13;Baustellen;Construction Sites;Building sites, development land, active construction areas
+141;3;14;Städtische Grünflächen;Green Urban Areas;Urban parks, city green space, urban vegetation, recreational greenery
+142;3;14;Sport- und Freizeitanlagen;Sport and Leisure Facilities;Recreational areas, sports grounds, leisure parks, athletic facilities
+2;1;;Landwirtschaftliche Flächen;Agricultural Areas;Farmland, agricultural land, cultivated land, rural land
+21;2;2;Ackerflächen;Arable Land;Cropland, tilled land, cultivated fields, ploughed land
+22;2;2;Dauerkulturen;Permanent Crops;Orchards, vineyards, perennial crops, permanent cultivation
+23;2;2;Grünland;Pastures;Grassland, meadows, grazing land, permanent pasture
+24;2;2;Landwirtschaftliche Flächen heterogener Struktur;Heterogeneous Agricultural Areas;Mixed farmland, mosaic agriculture, complex cultivation patterns
+211;3;21;Nicht bewässertes Ackerland;Non-Irrigated Arable Land;Dryland farming, rain-fed cropland, unirrigated cropland, tillage land
+212;3;21;Regelmäßig bewässertes Ackerland;Permanently Irrigated Land;Irrigated cropland, irrigated arable, rice paddies adjacent, irrigation farming
+213;3;21;Reisfelder;Rice Fields;Paddy fields, wet rice cultivation, flooded cropland
+221;3;22;Weinbauflächen;Vineyards;Viticulture areas, wine-growing land, grape cultivation
+222;3;22;Obst- und Beerenobstbestände;Fruit Trees and Berry Plantations;Orchards, soft fruit cultivation, fruit groves, pomiculture
+223;3;22;Olivenhaine;Olive Groves;Olive orchards, olive cultivation, Mediterranean tree crops
+231;3;23;Wiesen und Weiden;Pastures and Meadows;Grassland, permanent pasture, grazing land, improved grassland, leys
+241;3;24;Einjährige Kulturen in Verbindung mit Dauerkulturen;Annual Crops Associated with Permanent Crops;Mixed arable and perennial crops, transitional cultivation
+242;3;24;Komplexe Parzellenstruktur;Complex Cultivation Patterns;Mixed land use parcels, fragmented agricultural plots, mosaic farmland
+243;3;24;Landwirtschaftlich genutzte Flächen mit natürlicher Bodenbedeckung;Agricultural Land with Significant Natural Vegetation;Agri-natural mosaics, farmland with semi-natural cover, extensively farmed natural areas
+244;3;24;Land- und forstwirtschaftliche Flächen;Agro-Forestry Areas;Agroforestry, combined agriculture and forestry, silvo-pastoral land
+3;1;;Wälder und naturnahe Flächen;Forest and Semi-Natural Areas;Woodland, natural land, semi-natural habitats, sylvan areas
+31;2;3;Wälder;Forests;Woodland, wooded areas, tree cover, forested land
+32;2;3;Strauch- und Krautvegetation;Scrub and Herbaceous Vegetation;Shrubland, heathland, natural grassland, semi-natural open habitats
+33;2;3;Offene Flächen ohne oder mit geringer Vegetation;Open Spaces with Little or No Vegetation;Bare land, sparse vegetation, unvegetated areas, open natural land
+311;3;31;Laubwälder;Broadleaved Forest;Deciduous forest, hardwood forest, broadleaf woodland
+312;3;31;Nadelwälder;Coniferous Forest;Softwood forest, evergreen forest, needle-leaf forest, pine/spruce forest
+313;3;31;Mischwälder;Mixed Forest;Mixed woodland, combined broadleaf-conifer forest
+321;3;32;Natürliches Grünland;Natural Grassland;Native grassland, semi-natural grassland, unimproved grassland
+322;3;32;Heiden und Moorheiden;Heath and Moorland;Heathland, shrub heath, dwarf shrub heath, upland heath
+323;3;32;Hartlaubbewuchs;Sclerophyllous Vegetation;Maquis, garrigue, Mediterranean scrub, hard-leaved shrubs
+324;3;32;Wald-Strauch-Übergangsstadien;Transitional Woodland Scrub;Forest-shrub transition, woodland regrowth, scrubland, secondary woodland
+331;3;33;Strände Dünen und Sandflächen;Beaches Dunes and Sand Plains;Sandy shores, coastal dunes, sand flats, littoral sand
+332;3;33;Felsflächen ohne Vegetation;Bare Rock;Rock outcrops, unvegetated rock, cliffs, rocky surfaces
+333;3;33;Flächen mit spärlicher Vegetation;Sparsely Vegetated Areas;Sparse vegetation, open ground, pioneer vegetation
+334;3;33;Brandflächen;Burnt Areas;Fire-affected land, post-fire areas, burned ground, pyrogenic areas
+335;3;33;Gletscher und Dauerschneegebiete;Glaciers and Permanent Snow;Ice fields, permanent ice, snowfields, perennial snow cover
+4;1;;Feuchtflächen;Wetlands;Mires, bogs, marshes, swamps, waterlogged areas, wetland habitats
+41;2;4;Feuchtflächen im Landesinnern;Inland Wetlands;Inland marshes, peatlands, freshwater wetlands, fens
+42;2;4;Feuchtflächen an der Küste;Coastal Wetlands;Tidal wetlands, saltmarshes, coastal marshes, intertidal habitats
+411;3;41;Sümpfe;Marshes;Swamps, wetlands, fens, waterlogged areas
+412;3;41;Torfmoore;Peat Bogs;Mires, raised bogs, blanket bogs, peatland, sphagnum bogs
+421;3;42;Salzwiesen;Salt Marshes;Saline meadows, coastal marshes, halophytic vegetation, tidal marshes
+422;3;42;Salinen;Salines;Salt pans, salt works, evaporation ponds, brine extraction
+423;3;42;In der Gezeitenzone liegende Flächen;Intertidal Flats;Mudflats, tidal flats, wadden, foreshore, tidal zone
+5;1;;Wasserflächen;Water Bodies;Aquatic habitats, water surfaces, hydrological areas, aquatic environments
+51;2;5;Wasserflächen im Landesinnern;Inland Waters;Rivers, lakes, ponds, reservoirs, inland aquatic habitats
+52;2;5;Meeresgewässer;Marine Waters;Sea, ocean, coastal waters, marine habitats, offshore areas
+511;3;51;Gewässerläufe;Water Courses;Rivers, streams, canals, waterways, fluvial channels, running water
+512;3;51;Wasserflächen;Water Bodies;Lakes, ponds, reservoirs, still water, standing water, lentic water
+521;3;52;Lagunen;Coastal Lagoons;Brackish lagoons, coastal lakes, semi-enclosed coastal water
+522;3;52;Mündungsgebiete;Estuaries;River mouths, tidal estuaries, coastal inlets, firth, delta areas
+523;3;52;Meere und Ozeane;Sea and Ocean;Marine waters, offshore areas, exclusive economic zone, littoral zone, open sea
