@@ -33,10 +33,8 @@ TAXONOMY_ENTRIES = [
     if row["English Name"].strip()
 ]
 
-# Lookup by code for parent resolution
 _by_code: dict[str, dict] = {e["clc_code"]: e for e in TAXONOMY_ENTRIES}
 
-# Only level-3 entries go into the LLM prompt — parents are resolved automatically
 _l3 = [e for e in TAXONOMY_ENTRIES if e["level"] == "3"]
 
 TAXONOMY_REFERENCE = "\n".join(
@@ -45,15 +43,17 @@ TAXONOMY_REFERENCE = "\n".join(
     for e in _l3
 )
 
-SYSTEM_PROMPT = f"""You are a land-use classification expert.
+SYSTEM_PROMPT = f"""You are a land-use classification expert with broad geographic knowledge.
 You have the following detailed land taxonomy (CORINE Land Cover / LBM-DE Level-3 classes):
 
 {TAXONOMY_REFERENCE}
 
 When given a text and a number N, identify the top N best-fitting Level-3 classes.
-Score each match with a confidence value between 0.0 and 1.0.
-Return exactly the top N matches, sorted by confidence descending.
-Every match MUST use a CLC code from the list above.
+- Always return exactly N matches. Make your best guess even for vague or indirect descriptions.
+- Use all contextual clues: named places, described activities, vegetation, terrain, water bodies, etc. Named locations imply the land types typical for that region.
+- Only return fewer than N if the text contains absolutely no land-related content.
+- Every match MUST use a CLC code from the list above.
+Score each match with a confidence value between 0.0 and 1.0, sorted descending.
 
 Respond ONLY with a valid JSON object in this exact format:
 {{
@@ -66,12 +66,10 @@ Respond ONLY with a valid JSON object in this exact format:
     }}
   ],
   "summary": "one sentence summary of the land described"
-}}
-If nothing matches at all, return matches as an empty array."""
+}}"""
 
 
 def _resolve_hierarchy(clc_code: str, llm_name: str, llm_confidence: float) -> dict:
-    """Given a level-3 CLC code, return level1/level2/level3 sub-objects."""
     l3 = _by_code.get(clc_code, {"clc_code": clc_code, "english_name": llm_name, "parent_code": ""})
     l2_code = l3.get("parent_code", "")
     l2 = _by_code.get(l2_code, {"clc_code": l2_code, "english_name": "", "parent_code": ""})
