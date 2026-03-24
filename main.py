@@ -33,55 +33,55 @@ TAXONOMY_ENTRIES = [
     if row["English Name"].strip()
 ]
 
-# Build taxonomy reference strings per level for the system prompt
-def _ref_line(e: dict) -> str:
-    line = f"- [CLC {e['clc_code']}] {e['english_name']}"
-    if e["synonyms"]:
-        line += f" (aka: {e['synonyms']})"
-    return line
+# Lookup by code for parent resolution
+_by_code: dict[str, dict] = {e["clc_code"]: e for e in TAXONOMY_ENTRIES}
 
-_l1 = [e for e in TAXONOMY_ENTRIES if e["level"] == "1"]
-_l2 = [e for e in TAXONOMY_ENTRIES if e["level"] == "2"]
+# Only level-3 entries go into the LLM prompt — parents are resolved automatically
 _l3 = [e for e in TAXONOMY_ENTRIES if e["level"] == "3"]
 
-TAXONOMY_REFERENCE = (
-    "=== Level 1 (broad categories) ===\n"
-    + "\n".join(_ref_line(e) for e in _l1)
-    + "\n\n=== Level 2 (sub-categories) ===\n"
-    + "\n".join(_ref_line(e) for e in _l2)
-    + "\n\n=== Level 3 (detailed classes) ===\n"
-    + "\n".join(_ref_line(e) for e in _l3)
+TAXONOMY_REFERENCE = "\n".join(
+    f"- [CLC {e['clc_code']}] {e['english_name']}"
+    + (f" (aka: {e['synonyms']})" if e["synonyms"] else "")
+    for e in _l3
 )
 
 SYSTEM_PROMPT = f"""You are a land-use classification expert.
-You have the following land taxonomy (CORINE Land Cover / LBM-DE based), organised in three levels:
+You have the following detailed land taxonomy (CORINE Land Cover / LBM-DE Level-3 classes):
 
 {TAXONOMY_REFERENCE}
 
-When given a text and a number N, identify the top N best-fitting land types.
-For each match you MUST provide predictions at all three hierarchy levels:
-  - level1: the matching Level-1 category (single-digit CLC code, e.g. "3")
-  - level2: the matching Level-2 sub-category (two-digit CLC code, e.g. "33")
-  - level3: the matching Level-3 detailed class (three-digit CLC code, e.g. "332")
+When given a text and a number N, identify the top N best-fitting Level-3 classes.
+Score each match with a confidence value between 0.0 and 1.0.
+Return exactly the top N matches, sorted by confidence descending.
+Every match MUST use a CLC code from the list above.
 
-Each level object has: "clc_code", "english_name", "confidence" (0.0–1.0).
-Also provide a brief "reason" and an overall "confidence" for the whole match.
-
-Return exactly the top N matches, sorted by overall confidence descending.
 Respond ONLY with a valid JSON object in this exact format:
 {{
   "matches": [
     {{
+      "clc_code": "332",
+      "english_name": "Bare Rock",
       "confidence": 0.95,
-      "reason": "brief explanation",
-      "level1": {{"clc_code": "3", "english_name": "Forest and Semi-Natural Areas", "confidence": 0.95}},
-      "level2": {{"clc_code": "33", "english_name": "Open Spaces with Little or No Vegetation", "confidence": 0.92}},
-      "level3": {{"clc_code": "332", "english_name": "Bare Rock", "confidence": 0.90}}
+      "reason": "brief explanation"
     }}
   ],
   "summary": "one sentence summary of the land described"
 }}
 If nothing matches at all, return matches as an empty array."""
+
+
+def _resolve_hierarchy(clc_code: str, llm_name: str, llm_confidence: float) -> dict:
+    """Given a level-3 CLC code, return level1/level2/level3 sub-objects."""
+    l3 = _by_code.get(clc_code, {"clc_code": clc_code, "english_name": llm_name, "parent_code": ""})
+    l2_code = l3.get("parent_code", "")
+    l2 = _by_code.get(l2_code, {"clc_code": l2_code, "english_name": "", "parent_code": ""})
+    l1_code = l2.get("parent_code", "")
+    l1 = _by_code.get(l1_code, {"clc_code": l1_code, "english_name": ""})
+    return {
+        "level1": {"clc_code": l1["clc_code"], "english_name": l1["english_name"], "confidence": round(llm_confidence * 0.95, 4)},
+        "level2": {"clc_code": l2["clc_code"], "english_name": l2["english_name"], "confidence": round(llm_confidence * 0.97, 4)},
+        "level3": {"clc_code": clc_code, "english_name": llm_name, "confidence": llm_confidence},
+    }
 
 
 class ClassifyRequest(BaseModel):
@@ -173,8 +173,17 @@ async def _classify_single(text: str, top_k: int, model: str) -> ClassifyRespons
     except json.JSONDecodeError:
         raise HTTPException(status_code=500, detail=f"LLM returned invalid JSON: {raw}")
 
+    matches = []
+    for m in data.get("matches", []):
+        hierarchy = _resolve_hierarchy(m["clc_code"], m.get("english_name", ""), m.get("confidence", 0.0))
+        matches.append({
+            "confidence": m.get("confidence", 0.0),
+            "reason": m.get("reason", ""),
+            **hierarchy,
+        })
+
     return ClassifyResponse(
-        matches=data.get("matches", []),
+        matches=matches,
         summary=data.get("summary", ""),
         input_text=text,
     )
